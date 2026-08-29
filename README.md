@@ -1,6 +1,6 @@
 # RiohShots
 
-Taller de abstracción de objetos a partir de una app de uso diario — **Instagram** — para la asignatura de Diseño de Software, Facultad de Ingeniería, Universidad de La Guajira (Uniguajira), Riohacha.
+Taller de abstracción de objetos a partir de una app de uso diario — **Instagram** — para la asignatura de Desarrollo Movil, Facultad de Ingeniería, Universidad de La Guajira (Uniguajira), Riohacha.
 
 ## Integrantes
 
