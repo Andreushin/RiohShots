@@ -5,13 +5,13 @@ import 'mensaje.dart';
 class Reel extends Publicacion {
   int duracionSegundos;
   String musica;
-
   int _reproducciones = 0;
 
   Reel({
     required super.urlMultimedia,
     required super.descripcion,
     required super.fecha,
+    super.autor,
     required this.duracionSegundos,
     required this.musica,
   });
@@ -24,16 +24,13 @@ class Reel extends Publicacion {
   }
 
   void compartir(Usuario destinatario) {
+    final emisor = autor;
+    if (emisor == null) return;
     final mensaje = Mensaje(
       urlMultimedia: urlMultimedia,
       descripcion: 'Reel compartido: $descripcion',
       fecha: DateTime.now(),
     );
-    final emisor = autor;
-    if (emisor != null) {
-      emisor.enviarMensaje(destinatario, mensaje);
-    } else {
-      destinatario.mensajesRecibidos.add(mensaje);
-    }
+    emisor.enviarMensaje(destinatario, mensaje);
   }
 }
