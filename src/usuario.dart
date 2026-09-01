@@ -28,9 +28,13 @@ class Usuario {
   set privado(bool value) => _privado = value;
 
   /// Sigue a otro [Usuario]. No se puede seguir a sí mismo ni repetir usuarios.
+  /// El usuario seguido recibe una notificación de nuevo seguidor.
   void seguir(Usuario usuario) {
     if (usuario != this && !siguiendo.contains(usuario)) {
       siguiendo.add(usuario);
+      usuario.notificaciones.add(
+        Notificacion(tipo: 'nuevo_seguidor', fecha: DateTime.now()),
+      );
     }
   }
 
